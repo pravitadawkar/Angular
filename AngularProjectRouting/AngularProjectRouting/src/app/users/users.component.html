@@ -1,0 +1,58 @@
+<h3 style="color: tomato;font-size: large;margin-left: 20px;margin-top: 20px;">Users Details</h3>
+<button (click)="getdata()" type="button" class="btn btn-primary"  style="margin-left: 20px;">Get Users</button>
+<table class="table table-success table-striped" style="margin-left: 20px;">
+    <tr >
+        <td scope="col">PostId</td>
+        <td scope="col">Id</td>
+        <td scope="col">Name</td>
+        <td scope="col">Edit</td>
+        <td scope="col">Details</td>
+    </tr>
+    <tr *ngFor="let item of listData">
+        <td>{{item.postId}}</td>
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td><button type="button" class="btn btn-warning" >Edit User</button></td>
+        <td>    <button type="button" class="btn btn-info btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="getdatabiid(item.id)">Users Details</button>
+        </td>
+
+
+    </tr>
+</table>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Users Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" *ngFor="let items of databyid">
+          PostId:<p>{{items.postId}}</p>
+          Id:<p>{{items.id}}</p>
+          Name of user:<p>{{items.name}}</p>
+          User's Email:<p>{{items.email}}</p>
+          Body:<p>{{items.body}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+    
+    
+    
+    
+     
+  
+   
+<!-- postId:number;
+    id:number;
+    name:string;
+    email:string;
+    body:string -->
