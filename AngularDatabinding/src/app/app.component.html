@@ -1,0 +1,29 @@
+<h1 style="color: blue;">Change The Color</h1>
+<div><div style="width: 70px; height: 70px;" [style.background-color]="color"></div></div>
+<br>
+<button (click)="Changecolor()">ChangeColor</button>
+<br><br><br>
+<div><div style="width: 70px; height: 70px;" [style.background-color]="Display?'blue':'yellow'"></div></div>
+<br>
+<button (click)="Togglecolor()">ToggleColor</button>
+<br><br>
+<h3>pipes</h3>
+<h4>my name is {{Name}}</h4>
+<h4>my name is {{Name|uppercase}}</h4>
+<h4>my name is {{Name|titlecase}}</h4>
+<h4>my name is {{Name|lowercase}}</h4>
+<br>
+<h4>Today's date{{TodayDate|date}}</h4>
+<h4>Today's date{{TodayDate|date :'fullDate'}}</h4>
+<br>
+<h4>{{str}}</h4>
+<h4>{{str|slice:2}}</h4>
+<h4>{{str|slice:2:8}}</h4>
+<br>
+<h4>{{money}}</h4>
+<h4>{{money|currency:'USD'}}</h4>
+<h4>{{money|currency:'CAD'}}</h4>
+
+
+<router-outlet></router-outlet>
+
