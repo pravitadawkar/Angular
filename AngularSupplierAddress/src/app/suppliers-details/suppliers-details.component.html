@@ -1,0 +1,120 @@
+<h4 class="container text-success mt-4 text-center">SuppliersDetails</h4>
+<div class="container mt-4 ">
+
+<button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Add Suppler
+  </button>
+</div>
+<table class="table table-success table-striped container mt-4">
+    <thead class="h6">
+    <tr>
+            <td>SupplierId</td>
+            <td>SupplierName</td>
+            <td>City</td>
+            <td>State</td>
+            <td>Contry</td>
+            <td>PRODUCT</td>
+            <td>ViewSupplierDetails</td>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>01</td>
+        <td>Pravita</td>
+        <td>Pune</td>
+        <td>MH</td>
+        <td>India</td>
+        <td><button data-bs-toggle="modal" data-bs-target="#productBackdrop">Add Product</button></td>
+        <td><button [routerLink]="['/supplier',1]">View</button></td>
+    </tr>
+    <tr>
+        <td>02</td>
+        <td>Harshda</td>
+        <td>Beed</td>
+        <td>MH</td>
+        <td>India</td>
+        <td><button>Add Product</button></td>
+        <td><button>View</button></td>
+    </tr>
+    <tr></tr>
+</tbody>
+  </table>
+  <!-- <app-products></app-products>
+  <app-addsuppliers></app-addsuppliers> 
+  <router-outlet></router-outlet>-->
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Add Supplier</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body " style="background-color: rgb(204, 229, 252);">
+        <table>
+        <tr>
+            <td><label for="">SupplierId</label></td>
+            <td><input type="number">
+        </tr>
+          <br>
+        <tr>
+            <td><label for="">SupplierName</label></td>
+            <td><input type="text"></td>
+        </tr>
+        <br>
+        <tr>
+            <td><label for="">City</label></td>
+            <td><input type="text"></td>
+        </tr>
+        <br>
+        <tr>
+            <td><label for="">State</label></td>
+            <td><input type="text"></td>
+        </tr>
+        <br>
+        <tr>
+            <td><label for="">Country</label></td>
+            <td><input type="text"></td>
+        </tr>
+        </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   <!--this is for add product -->
+  <div class="modal fade" id="productBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Add Supplier</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body " style="background-color: rgb(204, 229, 252); ">
+        <table>
+        <tr>
+            <td><label for="">ProductId</label></td>
+            <td><input type="number">
+        </tr>
+          <br>
+        <tr>
+            <td><label for="">ProductName</label></td>
+            <td><input type="text"></td>
+        </tr>
+        <br>
+        <tr>
+            <td><label for="">UnitePrice</label></td>
+            <td><input type="number"></td>
+        </tr>
+        </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
