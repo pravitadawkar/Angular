@@ -1,1 +1,85 @@
-<p>addsuppliers works!</p>
+<h4 class="container text-success mt-4">Add Supplier Detail</h4>
+
+<form  [formGroup]=" suppliesaddForm" (ngSubmit)="onSubmit()" class="container text-primary mt-4">
+    <h5>Supplier</h5>
+<table>
+    
+    <label for="">
+        SupplierId :
+    </label>
+    
+    <input type="number" formControlName="supplierId"><br>
+    <span *ngIf="supplierId && supplierId.invalid && supplierId.touched" style="color: red;">* This field is Requered</span>
+    <br><br>
+    <label for="">
+        SupplierName :
+    </label>
+    
+    <input type="text" formControlName="supplierName"><br>
+    <span *ngIf="supplierName && supplierName.invalid && supplierName.touched" style="color: red;">* This field is Requered</span>
+    
+
+    <br><br>
+    <div >
+        <h5>supplieraddress</h5><br>
+
+        <tr>
+            <td>
+        <label for="">
+            AddressOne :
+        </label>
+        </td>
+        <td>
+        <input type="text" formControlName="addressone"><br>
+        <span *ngIf="addressone && addressone.invalid && addressone.touched" style="color: red;">* This field is Requered</span>
+    
+        </td>
+        <td>
+        <label for="">
+            AddressTwo :
+        </label>
+        </td>
+        <td>
+        <input type="text" formControlName="addresstwo"> <br>
+        <span *ngIf="addresstwo && addresstwo.invalid && addresstwo.touched" style="color: red;">* This field is Requered</span>
+    <br><br>
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <label for="" >
+            City :
+        </label>
+        </td>
+        <td>
+        <input type="textu5" formControlName="city"><br>
+        <span *ngIf="city && city.invalid && city.touched" style="color: red;">* This field is Requered</span>
+    
+        </td>
+        <td>
+        <label for="">
+            State :
+        </label>
+        </td>
+        <td>
+        <input type="text" formControlName="state"><br>
+        <span *ngIf="state && state.invalid && state.touched" style="color: red;">* This field is Requered</span>
+    <br><br>
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <label for="">
+            Country
+        </label></td>
+        <td>
+        <input type="text" formControlName="country"><br>
+        <span *ngIf="country && country.invalid && country.touched" style="color: red;">* This field is Requered</span>
+    <br><br>
+        </td>
+        </tr>
+        </div>
+</table>
+    <button type="submit" [disabled]="!suppliesaddForm.valid" class="bg-primary">SUBMIT</button>
+    <button [routerLink]="['/supplierdetail']" class="ms-4">Back</button>
+</form>

@@ -1,8 +1,8 @@
 <h4 class="container text-success mt-4 text-center">SuppliersDetails</h4>
 <div class="container mt-4 ">
 
-<button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Add Suppler
+<button type="button" class="btn btn-secondary btn-sm" [routerLink]="['/supplierdetail/addsupplier']">
+    Add Supplier
   </button>
 </div>
 <table class="table table-success table-striped container mt-4">
@@ -24,7 +24,7 @@
         <td>Pune</td>
         <td>MH</td>
         <td>India</td>
-        <td><button data-bs-toggle="modal" data-bs-target="#productBackdrop">Add Product</button></td>
+        <td><button  [routerLink]="['/supplierdetail/products']">Products</button></td>
         <td><button [routerLink]="['/supplier',1]">View</button></td>
     </tr>
     <tr>
@@ -33,17 +33,17 @@
         <td>Beed</td>
         <td>MH</td>
         <td>India</td>
-        <td><button>Add Product</button></td>
+        <td><button> Products</button></td>
         <td><button>View</button></td>
     </tr>
     <tr></tr>
 </tbody>
   </table>
   <!-- <app-products></app-products>
-  <app-addsuppliers></app-addsuppliers> 
-  <router-outlet></router-outlet>-->
+  <app-addsuppliers></app-addsuppliers>
+  <router-outlet></router-outlet>  -->
   <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
@@ -84,7 +84,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
    <!--this is for add product -->
   <div class="modal fade" id="productBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">

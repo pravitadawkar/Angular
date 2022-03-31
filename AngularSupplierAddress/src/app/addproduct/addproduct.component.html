@@ -1,0 +1,30 @@
+<h4 class="container text-success mt-4">Add Product Detail</h4>
+
+<form  [formGroup]=" productaddForm" (ngSubmit)="onSubmitPro()" class="container text-primary mt-4">
+    <h5>Product</h5>
+    <table>
+        <tr>
+           <td> ProductId : <input type="number" formControlName="productid"><br>
+           </td>
+            <span *ngIf="productid && productid.invalid && productid.touched" style="color: red;">* This field is Requered</span>
+           
+        </tr><br><br>
+        <tr>
+           <td>ProductName : <input type="text" formControlName="productname"><br>
+           </td>
+            <span *ngIf="productname && productname.invalid && productname.touched" style="color: red;">* This field is Requered</span>
+           
+        </tr>
+        <br><br>
+        <tr>
+            <td>UnitPrice : <input type="number" formControlName="unitprice">
+                <br>
+            </td>
+                <span *ngIf="unitprice && unitprice.invalid && unitprice.touched" style="color: red;">* This field is Requered</span>
+            
+        </tr>
+    </table> 
+    <br><br>
+    <button type="submit" [disabled]="!productaddForm.valid" class="bg-primary">SUBMIT</button>
+    <button [routerLink]="['/supplierdetail/products']" class="ms-4">Back</button>   
+</form>    

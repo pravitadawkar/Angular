@@ -1,1 +1,28 @@
-<p>products works!</p>
+<h4 class="container text-success mt-4 text-center">
+    Products Details
+</h4>
+<div class="container mt-4 ">
+<button type="button" class="btn btn-secondary btn-sm" [routerLink]="['/supplierdetail/products/addproduct']">
+    Add Product
+  </button>
+</div>
+<table class="table table-success table-striped container mt-4">
+    <thead class="h6">
+        <tr>
+            <td>SupplierId</td>
+            <td>ProductId</td>
+            <td>ProductName</td>
+            <td>UnitePrice</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>01</td>
+            <td>1</td>
+            <td>cooler</td>
+            <td>3000</td>
+            <td><button [routerLink]="['/supplierdetail']">Back</button></td>
+        </tr>
+    </tbody>
+</table>
