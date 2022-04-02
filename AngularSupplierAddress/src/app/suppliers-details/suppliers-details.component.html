@@ -1,7 +1,9 @@
 <h4 class="container text-success mt-4 text-center">SuppliersDetails</h4>
 <div class="container mt-4 ">
-
-<button type="button" class="btn btn-secondary btn-sm" [routerLink]="['/supplierdetail/addsupplier']">
+  <button type="button" class="btn btn-secondary btn-sm" (click)="get_allsuppliers()">
+   Refresh
+  </button>
+<button type="button" class="btn btn-secondary btn-sm ms-4" [routerLink]="['/supplierdetail/addsupplier']">
     Add Supplier
   </button>
 </div>
@@ -10,31 +12,28 @@
     <tr>
             <td>SupplierId</td>
             <td>SupplierName</td>
+            <td>Address</td>
             <td>City</td>
             <td>State</td>
             <td>Contry</td>
             <td>PRODUCT</td>
-            <td>ViewSupplierDetails</td>
+            <td>View</td>
+            <td>Edit</td>
+            <td>Delete</td>
     </tr>
 </thead>
 <tbody>
-    <tr>
-        <td>01</td>
-        <td>Pravita</td>
-        <td>Pune</td>
-        <td>MH</td>
-        <td>India</td>
+    <tr *ngFor="let item of listAllSupplier">
+        <td>{{item.supplierId}}</td>
+        <td>{{item.supplierName}}</td>
+        <td>{{item.address1}}</td>
+        <td>{{item.city}}</td>
+        <td>{{item.state}}</td>
+        <td>{{item.country}}</td>
         <td><button  [routerLink]="['/supplierdetail/products']">Products</button></td>
         <td><button [routerLink]="['/supplier',1]">View</button></td>
-    </tr>
-    <tr>
-        <td>02</td>
-        <td>Harshda</td>
-        <td>Beed</td>
-        <td>MH</td>
-        <td>India</td>
-        <td><button> Products</button></td>
-        <td><button>View</button></td>
+        <td><button>EDIT</button></td>
+        <td><button (click)="delete_supplier(item.supplierId)">DELETTE</button></td>
     </tr>
     <tr></tr>
 </tbody>
@@ -86,7 +85,7 @@
     </div>
   </div> -->
    <!--this is for add product -->
-  <div class="modal fade" id="productBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="productBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
@@ -117,4 +116,4 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->

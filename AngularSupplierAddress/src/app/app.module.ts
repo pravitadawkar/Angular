@@ -11,7 +11,10 @@ import { SupplierComponent } from './supplier/supplier.component';
 import{ProductsComponent}from './products/products.component';
 import{AddsuppliersComponent}from './addsuppliers/addsuppliers.component';
 import{ReactiveFormsModule} from '@angular/forms';
-import { AddproductComponent } from './addproduct/addproduct.component'
+import { AddproductComponent } from './addproduct/addproduct.component';
+import{HttpClientModule} from '@angular/common/http';
+import{supplierservice} from './services/supplier.servise';
+import{Models} from './classes/models'
 
 @NgModule({
   declarations: [
@@ -28,9 +31,10 @@ import { AddproductComponent } from './addproduct/addproduct.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [supplierservice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

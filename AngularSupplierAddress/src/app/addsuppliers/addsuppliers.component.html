@@ -4,13 +4,13 @@
     <h5>Supplier</h5>
 <table>
     
-    <label for="">
+    <!-- <label for="">
         SupplierId :
     </label>
     
     <input type="number" formControlName="supplierId"><br>
     <span *ngIf="supplierId && supplierId.invalid && supplierId.touched" style="color: red;">* This field is Requered</span>
-    <br><br>
+    <br><br> -->
     <label for="">
         SupplierName :
     </label>
@@ -30,8 +30,8 @@
         </label>
         </td>
         <td>
-        <input type="text" formControlName="addressone"><br>
-        <span *ngIf="addressone && addressone.invalid && addressone.touched" style="color: red;">* This field is Requered</span>
+        <input type="text" formControlName="address1"><br>
+        <span *ngIf="address1 && address1.invalid && address1.touched" style="color: red;">* This field is Requered</span>
     
         </td>
         <td>
@@ -40,8 +40,8 @@
         </label>
         </td>
         <td>
-        <input type="text" formControlName="addresstwo"> <br>
-        <span *ngIf="addresstwo && addresstwo.invalid && addresstwo.touched" style="color: red;">* This field is Requered</span>
+        <input type="text" formControlName="address2"> <br>
+        <span *ngIf="address2 && address2.invalid && address2.touched" style="color: red;">* This field is Requered</span>
     <br><br>
         </td>
         </tr>
@@ -80,6 +80,6 @@
         </tr>
         </div>
 </table>
-    <button type="submit" [disabled]="!suppliesaddForm.valid" class="bg-primary">SUBMIT</button>
+    <button type="submit" [disabled]="!suppliesaddForm.valid" class="bg-primary" >SUBMIT</button>
     <button [routerLink]="['/supplierdetail']" class="ms-4">Back</button>
 </form>
