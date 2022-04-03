@@ -17,5 +17,11 @@ export class supplierservice{
     deleteSupplier(supplierId:number):Observable<Models>{
         return this.httpclient.post<Models>("https://localhost:44338/api/Supplier/DeleteSupplier?SupplierId="+supplierId,'')
     }
+    getSupplierById(supplierId:number):Observable<Models>{
+        return this.httpclient.get<Models>("https://localhost:44338/api/Supplier/GetSupplier?id="+supplierId);
+    }
+    updateSupplier(model:Models):Observable<Models>{
+        return this.httpclient.post<Models>("https://localhost:44338/api/Supplier/UpdateSupplier",model)
+    }
 
 }

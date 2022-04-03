@@ -17,7 +17,7 @@
             <td>State</td>
             <td>Contry</td>
             <td>PRODUCT</td>
-            <td>View</td>
+            <!-- <td>View</td> -->
             <td>Edit</td>
             <td>Delete</td>
     </tr>
@@ -31,8 +31,8 @@
         <td>{{item.state}}</td>
         <td>{{item.country}}</td>
         <td><button  [routerLink]="['/supplierdetail/products']">Products</button></td>
-        <td><button [routerLink]="['/supplier',1]">View</button></td>
-        <td><button>EDIT</button></td>
+        <!-- <td><button [routerLink]="['/supplier',1]">View</button></td> -->
+        <td><button [routerLink]="['/updatesupplier',item.supplierId]">EDIT</button></td>
         <td><button (click)="delete_supplier(item.supplierId)">DELETTE</button></td>
     </tr>
     <tr></tr>

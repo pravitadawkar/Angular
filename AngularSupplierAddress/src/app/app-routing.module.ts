@@ -8,6 +8,7 @@ import { SupplierComponent } from './supplier/supplier.component';
 import { AddsuppliersComponent } from './addsuppliers/addsuppliers.component';
 import { ProductsComponent } from './products/products.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import{UpdatesupplierComponent} from './updatesupplier/updatesupplier.component'
 
 const routes: Routes = [
   //{path:'**',redirectTo:'supplierdetail'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:'contact',component:ContactComponent},
   {path:'supplier/:id',component:SupplierComponent},
   {path:'supplierdetail/addsupplier',component:AddsuppliersComponent},
+  {path:'updatesupplier/:id',component:UpdatesupplierComponent},
   {path:'supplierdetail/products',component:ProductsComponent},
   {path:'supplierdetail/products/addproduct',component:AddproductComponent}
   //{path:'supplierdetail',component:SuppliersDetailsComponent,loadChildren:()=>import('./suppliers-details/suppliers-details.module').then(mod=>mod.SuppliersDetailsModule)}

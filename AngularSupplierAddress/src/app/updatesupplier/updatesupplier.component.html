@@ -1,0 +1,82 @@
+<h4 class="container text-success mt-4">Update Supplier Detail</h4>
+
+<form  [formGroup]=" suppliesaddForm" (ngSubmit)="onSubmit()" class="container text-primary mt-4">
+    <h5>Supplier</h5>
+<table>
+    <input type="number" formControlName="supplierId" hidden><br>
+    
+    <!-- <label for="">
+        SupplierId :
+    </label>
+    
+    <span *ngIf="supplierId && supplierId.invalid && supplierId.touched" style="color: red;">* This field is Requered</span>
+    <br><br> -->
+    <label for="">
+        SupplierName :
+    </label>
+    
+    <input type="text" formControlName="supplierName"><br>
+    
+
+    <br><br>
+    <div >
+        <h5>supplieraddress</h5><br>
+
+        <tr>
+            <td>
+        <label for="">
+            AddressOne :
+        </label>
+        </td>
+        <td>
+        <input type="text" formControlName="address1"><br>
+        
+        </td>
+        <td>
+        <label for="">
+            AddressTwo :
+        </label>
+        </td>
+        <td>
+        <input type="text" formControlName="address2"> <br>
+        <br><br>
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <label for="" >
+            City :
+        </label>
+        </td>
+        <td>
+        <input type="textu5" formControlName="city"><br>
+        
+        </td>
+        <td>
+        <label for="">
+            State :
+        </label>
+        </td>
+        <td>
+        <input type="text" formControlName="state"><br>
+        
+    <br><br>
+        </td>
+        </tr>
+        <tr>
+            <td>
+        <label for="">
+            Country
+        </label></td>
+        <td>
+        <input type="text" formControlName="country"><br>
+       
+    <br><br>
+        </td>
+        </tr>
+        </div>
+</table>
+    <button type="submit" class="bg-primary" >SUBMIT</button>
+    <button [routerLink]="['/supplierdetail']" class="ms-4">Back</button>
+</form>
+

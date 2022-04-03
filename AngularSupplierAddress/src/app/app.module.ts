@@ -14,7 +14,8 @@ import{ReactiveFormsModule} from '@angular/forms';
 import { AddproductComponent } from './addproduct/addproduct.component';
 import{HttpClientModule} from '@angular/common/http';
 import{supplierservice} from './services/supplier.servise';
-import{Models} from './classes/models'
+import{Models} from './classes/models';
+import { UpdatesupplierComponent } from './updatesupplier/updatesupplier.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import{Models} from './classes/models'
     SupplierComponent,
     ProductsComponent,
     AddsuppliersComponent,
-    AddproductComponent
+    AddproductComponent,
+    UpdatesupplierComponent
   ],
   imports: [
     BrowserModule,
