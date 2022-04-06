@@ -8,21 +8,30 @@ import { SupplierComponent } from './supplier/supplier.component';
 import { AddsuppliersComponent } from './addsuppliers/addsuppliers.component';
 import { ProductsComponent } from './products/products.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
-import{UpdatesupplierComponent} from './updatesupplier/updatesupplier.component'
+import{UpdatesupplierComponent} from './updatesupplier/updatesupplier.component';
+import{UserComponent} from './user/user.component';
+import{ SignInComponent} from './sign-in/sign-in.component';
+import{SignUpComponent} from './sign-up/sign-up.component'
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   //{path:'**',redirectTo:'supplierdetail'},
   {path:'home',component:HomeComponent},
-  {path:'supplierdetail',component:SuppliersDetailsComponent},
+  {path:'supplierdetail',component:SuppliersDetailsComponent,canActivate:[AuthGuard]},
   {path:'aboutus',component:AboutUsComponent},
   {path:'contact',component:ContactComponent},
   {path:'supplier/:id',component:SupplierComponent},
   {path:'supplierdetail/addsupplier',component:AddsuppliersComponent},
   {path:'updatesupplier/:id',component:UpdatesupplierComponent},
   {path:'supplierdetail/products',component:ProductsComponent},
-  {path:'supplierdetail/products/addproduct',component:AddproductComponent}
+  {path:'supplierdetail/products/addproduct',component:AddproductComponent},
   //{path:'supplierdetail',component:SuppliersDetailsComponent,loadChildren:()=>import('./suppliers-details/suppliers-details.module').then(mod=>mod.SuppliersDetailsModule)}
-  
+  {path:'signup',component:SignUpComponent},
+  {path:'login',component:SignInComponent},
+ // {path:'',component:SignInComponent},
+  {path:'',redirectTo:'/login',pathMatch:'full'},
+  {path:'user',component:UserComponent}
+
 ];
 
 @NgModule({

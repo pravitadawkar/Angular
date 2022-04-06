@@ -15,7 +15,12 @@ import { AddproductComponent } from './addproduct/addproduct.component';
 import{HttpClientModule} from '@angular/common/http';
 import{supplierservice} from './services/supplier.servise';
 import{Models} from './classes/models';
-import { UpdatesupplierComponent } from './updatesupplier/updatesupplier.component'
+import { RouterModule } from '@angular/router';
+import { UpdatesupplierComponent } from './updatesupplier/updatesupplier.component';
+import { UserComponent } from './user/user.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import{AuthService} from './services/auth-service.service'
 
 @NgModule({
   declarations: [
@@ -28,7 +33,10 @@ import { UpdatesupplierComponent } from './updatesupplier/updatesupplier.compone
     ProductsComponent,
     AddsuppliersComponent,
     AddproductComponent,
-    UpdatesupplierComponent
+    UpdatesupplierComponent,
+    UserComponent,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,7 @@ import { UpdatesupplierComponent } from './updatesupplier/updatesupplier.compone
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [supplierservice],
+  providers: [supplierservice,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
