@@ -10,8 +10,11 @@ export class AuthService{
         return this.httpclient.post<any>("https://localhost:44338/api/Authenticate/register",data);
     }
     loginForm(data:any):Observable<any>{
-        return this.httpclient.post<any>('https://localhost:44338/api/Authenticate/login',data)
+        return this.httpclient.post<any>('https://localhost:44338/api/Authenticate/login',data);
     }
+     getToken(){
+         return localStorage.getItem('token');
+     }
     
-    
+     
 }

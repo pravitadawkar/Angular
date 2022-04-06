@@ -12,7 +12,7 @@ import{ProductsComponent}from './products/products.component';
 import{AddsuppliersComponent}from './addsuppliers/addsuppliers.component';
 import{ReactiveFormsModule} from '@angular/forms';
 import { AddproductComponent } from './addproduct/addproduct.component';
-import{HttpClientModule} from '@angular/common/http';
+import{HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import{supplierservice} from './services/supplier.servise';
 import{Models} from './classes/models';
 import { RouterModule } from '@angular/router';
@@ -21,6 +21,8 @@ import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import{AuthService} from './services/auth-service.service'
+import { InterceptorService } from './services/interceptor.service';
+import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import{AuthService} from './services/auth-service.service'
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [supplierservice,AuthService],
+  providers: [supplierservice,AuthGuard,AuthService,{
+    provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
